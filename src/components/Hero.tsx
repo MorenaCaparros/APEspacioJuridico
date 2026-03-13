@@ -13,13 +13,13 @@ export default function Hero() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.6 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-brand-50 blur-3xl"
+          className="absolute -top-40 -right-40 h-[280px] w-[280px] rounded-full bg-brand-50 blur-3xl sm:h-[600px] sm:w-[600px]"
         />
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.8 }}
           transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-          className="absolute -bottom-20 -left-20 h-[400px] w-[400px] rounded-full bg-nude blur-3xl"
+          className="absolute -bottom-20 -left-20 h-[200px] w-[200px] rounded-full bg-nude blur-3xl sm:h-[400px] sm:w-[400px]"
         />
         {/* Grid pattern overlay */}
         <div
@@ -47,7 +47,7 @@ export default function Hero() {
 
             {/* Heading */}
             <StaggerItem>
-              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-dark sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-2xl font-bold leading-[1.1] tracking-tight text-dark sm:text-4xl lg:text-6xl xl:text-7xl">
                 Soluciones legales{" "}
                 <span className="text-brand">ágiles</span>{" "}
                 para empresas y particulares
@@ -56,7 +56,7 @@ export default function Hero() {
 
             {/* Subheading */}
             <StaggerItem>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-dark-muted sm:text-xl">
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-dark-muted sm:text-lg lg:text-xl">
                 Combinamos la solidez del derecho tradicional con un enfoque tech-first.
                 Asesoría legal pensada para quienes construyen el futuro.
               </p>

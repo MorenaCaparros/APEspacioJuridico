@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -17,25 +18,60 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const siteUrl = "https://www.aranapostigo.com";
+
 export const metadata: Metadata = {
-  title: "AP Arana Postigo | Estudio Jurídico — Empresas & Particulares",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Arana Postigo | Estudio Jurídico — Buenos Aires",
+    template: "%s | Arana Postigo Estudio Jurídico",
+  },
   description:
-    "Soluciones legales ágiles para empresas tecnológicas, startups y particulares. Registro de marcas, contratos IT, derecho laboral y sucesiones en Buenos Aires.",
+    "Estudio jurídico en Buenos Aires especializado en registro de marcas, contratos IT para startups, derecho laboral y sucesiones. Asesoría legal ágil para empresas y particulares.",
   keywords: [
-    "estudio jurídico",
-    "abogados Buenos Aires",
-    "registro de marcas",
-    "contratos IT",
-    "derecho laboral",
-    "sucesiones",
-    "startups",
+    "estudio jurídico Buenos Aires",
+    "abogados startups Argentina",
+    "registro de marcas INPI",
+    "contratos IT SaaS",
+    "derecho laboral Buenos Aires",
+    "sucesiones abogado",
     "asesoría legal empresas",
+    "abogado marcas",
+    "outsourcing legal startup",
   ],
+  authors: [{ name: "Arana Postigo Estudio Jurídico", url: siteUrl }],
+  creator: "Arana Postigo Estudio Jurídico",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-snippet": -1 },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
-    title: "AP Arana Postigo | Estudio Jurídico",
-    description:
-      "Soluciones legales ágiles para empresas tecnológicas y particulares.",
     type: "website",
+    locale: "es_AR",
+    url: siteUrl,
+    siteName: "Arana Postigo Estudio Jurídico",
+    title: "Arana Postigo | Estudio Jurídico — Buenos Aires",
+    description:
+      "Registro de marcas, contratos IT, derecho laboral y sucesiones en Buenos Aires. Asesoría legal moderna para empresas y particulares.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Arana Postigo Estudio Jurídico — Buenos Aires",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arana Postigo | Estudio Jurídico — Buenos Aires",
+    description:
+      "Registro de marcas, contratos IT, derecho laboral y sucesiones. Asesoría legal ágil en Buenos Aires.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -46,7 +82,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={cn(geistSans.variable, geistMono.variable)}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden">
+        <JsonLd />
         <Navbar />
         {children}
         <WhatsAppButton />

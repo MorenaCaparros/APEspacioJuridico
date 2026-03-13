@@ -36,7 +36,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-6">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
@@ -67,6 +67,7 @@ export default function Navbar() {
             <ThemeToggle />
             <Button
               render={<a href="#contacto" />}
+              nativeButton={false}
               className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-light hover:shadow-lg hover:shadow-brand/20"
             >
               Agendar consulta

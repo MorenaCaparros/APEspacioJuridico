@@ -7,20 +7,26 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-white to-brand-50/60 dark:from-[#0F0710] dark:via-[#0F0710] dark:to-[#0F0710]">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-brand-50/40 to-nude dark:from-[#0F0710] dark:via-[#0F0710] dark:to-[#0F0710]">
       {/* Background decorative elements */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.6 }}
+          animate={{ scale: 1, opacity: 0.5 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute -top-40 -right-40 h-[280px] w-[280px] rounded-full bg-brand-50 blur-3xl sm:h-[600px] sm:w-[600px]"
+          className="absolute -top-32 -right-32 h-[260px] w-[260px] rounded-full bg-brand-200/50 blur-3xl dark:bg-brand-800 sm:h-[520px] sm:w-[520px]"
         />
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.8 }}
+          animate={{ scale: 1, opacity: 0.45 }}
           transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-          className="absolute -bottom-20 -left-20 h-[200px] w-[200px] rounded-full bg-nude blur-3xl sm:h-[400px] sm:w-[400px]"
+          className="absolute -bottom-16 -left-16 h-[180px] w-[180px] rounded-full bg-nude blur-3xl dark:bg-[#1E0F1A] sm:h-[380px] sm:w-[380px]"
+        />
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.3 }}
+          transition={{ duration: 1.4, delay: 0.4, ease: "easeOut" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-brand-100/60 blur-3xl dark:bg-[#2E1124] sm:h-[500px] sm:w-[500px]"
         />
         {/* Grid pattern overlay */}
         <div
@@ -33,7 +39,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl w-full px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:px-8 lg:pt-36 lg:pb-24">
+      <div className="relative mx-auto max-w-screen-2xl w-full px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:px-6 lg:pt-36 lg:pb-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* Left — Text */}
@@ -70,6 +76,7 @@ export default function Hero() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Button
                   render={<a href="#empresas" />}
+                  nativeButton={false}
                   size="lg"
                   className="group rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-lg shadow-brand/25 hover:bg-brand-light hover:shadow-xl hover:shadow-brand/30"
                 >
@@ -78,6 +85,7 @@ export default function Hero() {
                 </Button>
                 <Button
                   render={<a href="#particulares" />}
+                  nativeButton={false}
                   variant="outline"
                   size="lg"
                   className="group rounded-full border-2 border-brand/20 dark:border-brand/30 bg-white dark:bg-transparent px-7 py-4 text-base font-semibold text-brand dark:text-brand-300 hover:border-brand/40 hover:bg-brand-50 dark:hover:bg-brand-900/30"
@@ -90,7 +98,7 @@ export default function Hero() {
 
             {/* Trust indicators */}
             <StaggerItem>
-              <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-gray-border dark:border-[#3A1F32] pt-8">
+              <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-[#8A3D6B]/40 dark:border-[#3A1F32] pt-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A]">
                     <Building2 className="h-5 w-5 text-brand dark:text-brand-300" />
@@ -115,13 +123,13 @@ export default function Hero() {
 
           {/* Right — Photo */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="relative mx-auto w-full max-w-sm lg:max-w-none"
           >
             {/* Decorative background blob behind photo */}
-            <div className="absolute inset-0 -m-4 rounded-3xl bg-brand-50" />
+            <div className="absolute inset-0 -m-4 rounded-3xl bg-[#C98FBA]/30 dark:bg-brand-900/50" />
             <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-brand/10">
               <Image
                 src="/hero-image.png"

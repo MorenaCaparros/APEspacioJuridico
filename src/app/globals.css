@@ -99,13 +99,15 @@
 }
 
 /* Smooth scrolling */
-html {
+html,
+body {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   color: var(--on-surface);
-  overflow-x: hidden;
 }
 
 /* Custom scrollbar */
@@ -116,7 +118,7 @@ body {
   background: var(--surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brand-200);
+  background: var(--color-brand-400);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -133,24 +135,24 @@ body {
   --divider: #E5E5EA;
 
   /* shadcn tokens — light */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --background: #FFFFFF;
+  --foreground: #1A1A2E;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A2E;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A2E;
   /* Brand borravino as primary */
   --primary: #722F57;
   --primary-foreground: #ffffff;
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: #F9F1F6;
+  --secondary: #F9F1F6;
+  --secondary-foreground: #1A1A2E;
+  --muted: #F9F1F6;
+  --muted-foreground: #4A4A5E;
+  --accent: #F0DDE9;
   --accent-foreground: #722F57;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
+  --border: #E5E5EA;
+  --input: #E5E5EA;
   --ring: #722F57;
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
@@ -158,14 +160,14 @@ body {
   --chart-4: oklch(0.488 0.243 264.376);
   --chart-5: oklch(0.424 0.199 265.638);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A2E;
   --sidebar-primary: #722F57;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent: #F9F1F6;
+  --sidebar-accent-foreground: #1A1A2E;
+  --sidebar-border: #E5E5EA;
+  --sidebar-ring: #722F57;
 }
 
 /* ===== DARK MODE ===== */

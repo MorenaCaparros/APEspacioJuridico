@@ -7,8 +7,8 @@ export default async function Blog() {
   const articulos = await getArticulos(3);
 
   return (
-    <section id="blog" className="bg-gradient-to-b from-white to-brand-50/40 dark:from-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="blog" className="overflow-hidden bg-gradient-to-b from-white to-brand-50/40 dark:from-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-6">
         {/* Header */}
         <FadeIn className="mb-16 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>

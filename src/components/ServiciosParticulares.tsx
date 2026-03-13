@@ -30,11 +30,17 @@ const servicios: Servicio[] = [
 
 export default function ServiciosParticulares() {
   return (
-    <section id="particulares" className="relative bg-gradient-to-br from-nude via-brand-50/50 to-nude-dark dark:from-[#0F0710] dark:via-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
+    <section id="particulares" className="relative overflow-hidden bg-gradient-to-br from-white via-brand-50/30 to-nude dark:from-[#0F0710] dark:via-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
       {/* Top separator */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent" />
+      {/* Decorative blobs — light mode only */}
+      <div className="pointer-events-none absolute inset-0 dark:hidden">
+        <div className="absolute -bottom-20 -right-20 h-[320px] w-[320px] rounded-full bg-brand-200/40 blur-3xl" />
+        <div className="absolute top-10 left-1/3 h-[220px] w-[220px] rounded-full bg-nude-dark/50 blur-3xl" />
+        <div className="absolute -top-16 left-10 h-[180px] w-[180px] rounded-full bg-brand-100/50 blur-3xl" />
+      </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-6">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white dark:bg-[#1E0F1A] px-3 py-1 shadow-sm">
@@ -61,7 +67,7 @@ export default function ServiciosParticulares() {
                 <motion.div
                   whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(114, 47, 87, 0.10)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group relative h-full overflow-hidden rounded-2xl border border-nude-200 dark:border-[#3A1F32] bg-white dark:bg-[#180D16] p-6 sm:p-8 shadow-sm lg:p-10"
+                  className="group relative h-full overflow-hidden rounded-2xl border border-nude-200 dark:border-[#3A1F32] bg-white dark:bg-[#180D16] p-6 sm:p-8 shadow-sm hover:border-brand/30 hover:shadow-md hover:shadow-brand/10 lg:p-10"
                 >
                   {/* Icon */}
                   <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A] text-brand dark:text-brand-300">

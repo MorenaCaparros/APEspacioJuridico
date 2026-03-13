@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={cn(geistSans.variable, geistMono.variable)} suppressHydrationWarning>
-      <body className="font-sans antialiased overflow-x-hidden">
+      <body className="font-sans antialiased">
         <ThemeProvider>
           <JsonLd />
           <Navbar />

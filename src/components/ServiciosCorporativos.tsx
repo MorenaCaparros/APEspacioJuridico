@@ -37,8 +37,14 @@ const servicios: Servicio[] = [
 
 export default function ServiciosCorporativos() {
   return (
-    <section id="empresas" className="relative bg-gradient-to-b from-brand-50/40 to-white dark:from-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="empresas" className="relative overflow-hidden bg-gradient-to-b from-nude to-white dark:from-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
+      {/* Decorative blobs — light mode only */}
+      <div className="pointer-events-none absolute inset-0 dark:hidden">
+        <div className="absolute -top-24 -right-24 h-[300px] w-[300px] rounded-full bg-brand-200/40 blur-3xl" />
+        <div className="absolute bottom-0 left-1/4 h-[250px] w-[250px] rounded-full bg-nude-dark/60 blur-3xl" />
+        <div className="absolute top-1/3 -left-16 h-[200px] w-[200px] rounded-full bg-brand-100/50 blur-3xl" />
+      </div>
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-6 relative">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1">
@@ -65,7 +71,7 @@ export default function ServiciosCorporativos() {
                 <motion.div
                   whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(114, 47, 87, 0.12)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group relative h-full rounded-2xl border border-gray-border dark:border-[#3A1F32] bg-white dark:bg-[#180D16] p-8 transition-colors duration-300 hover:border-brand/20 dark:hover:border-brand/40"
+                  className="group relative h-full rounded-2xl border border-gray-border dark:border-[#3A1F32] bg-white dark:bg-[#180D16] p-8 transition-colors duration-300 hover:border-brand/30 dark:hover:border-brand/40 hover:shadow-md hover:shadow-brand/10"
                 >
                   {/* Icon */}
                   <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A] text-brand dark:text-brand-300 transition-colors group-hover:bg-brand group-hover:text-white">

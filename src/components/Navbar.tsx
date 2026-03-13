@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
   Sheet,
   SheetContent,
@@ -31,7 +32,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-border"
+          ? "bg-white/90 dark:bg-[#0F0710]/90 backdrop-blur-md shadow-sm border-b border-gray-border dark:border-[#3A1F32]"
           : "bg-transparent"
       }`}
     >
@@ -43,10 +44,10 @@ export default function Navbar() {
               AP
             </div>
             <div className="flex flex-col">
-              <span className="text-sm font-semibold tracking-tight text-dark leading-tight">
+              <span className="text-sm font-semibold tracking-tight text-dark dark:text-white/90 leading-tight">
                 Arana Postigo
               </span>
-              <span className="text-[10px] font-medium uppercase tracking-widest text-dark-muted leading-tight">
+              <span className="text-[10px] font-medium uppercase tracking-widest text-dark-muted dark:text-white/40 leading-tight">
                 Estudio Jurídico
               </span>
             </div>
@@ -58,11 +59,12 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-dark-muted transition-colors hover:text-brand"
+                className="text-sm font-medium text-dark-muted dark:text-white/60 transition-colors hover:text-brand dark:hover:text-brand-300"
               >
                 {link.label}
               </a>
             ))}
+            <ThemeToggle />
             <Button
               render={<a href="#contacto" />}
               className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-light hover:shadow-lg hover:shadow-brand/20"
@@ -72,7 +74,8 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu — shadcn Sheet */}
-          <div className="md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
             <Sheet>
               <SheetTrigger
                 render={
@@ -81,14 +84,14 @@ export default function Navbar() {
               >
                 <Menu className="h-5 w-5" />
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] p-0">
+              <SheetContent side="right" className="w-[300px] p-0 bg-white dark:bg-[#180D16] border-gray-border dark:border-[#3A1F32]">
                 <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
                 <div className="flex flex-col gap-1 px-4 pt-16 pb-6">
                   {navLinks.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
-                      className="rounded-lg px-4 py-3 text-base font-medium text-dark-muted transition-colors hover:bg-nude hover:text-brand"
+                      className="rounded-lg px-4 py-3 text-base font-medium text-dark-muted dark:text-white/60 transition-colors hover:bg-nude dark:hover:bg-[#1E0F1A] hover:text-brand dark:hover:text-brand-300"
                     >
                       {link.label}
                     </a>

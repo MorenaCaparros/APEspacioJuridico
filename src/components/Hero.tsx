@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-[#0F0710]">
       {/* Background decorative elements */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -40,7 +40,7 @@ export default function Hero() {
           <StaggerContainer staggerDelay={0.1} delayChildren={0.15}>
             {/* Badge */}
             <StaggerItem>
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-4 py-1.5">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-brand-100 dark:border-brand-900 bg-brand-50 dark:bg-[#1E0F1A] px-4 py-1.5">
                 <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-brand">
                   Estudio jurídico moderno
@@ -50,7 +50,7 @@ export default function Hero() {
 
             {/* Heading */}
             <StaggerItem>
-              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-dark sm:text-4xl lg:text-5xl xl:text-6xl">
+              <h1 className="text-3xl font-bold leading-[1.1] tracking-tight text-dark dark:text-white sm:text-4xl lg:text-5xl xl:text-6xl">
                 Soluciones legales{" "}
                 <span className="text-brand">ágiles</span>{" "}
                 para empresas y particulares
@@ -59,7 +59,7 @@ export default function Hero() {
 
             {/* Subheading */}
             <StaggerItem>
-              <p className="mt-6 text-base leading-relaxed text-dark-muted sm:text-lg">
+              <p className="mt-6 text-base leading-relaxed text-dark-muted dark:text-white/60 sm:text-lg">
                 Combinamos la solidez del derecho tradicional con un enfoque tech-first.
                 Asesoría legal pensada para quienes construyen el futuro.
               </p>
@@ -80,7 +80,7 @@ export default function Hero() {
                   render={<a href="#particulares" />}
                   variant="outline"
                   size="lg"
-                  className="group rounded-full border-2 border-brand/20 bg-white px-7 py-4 text-base font-semibold text-brand hover:border-brand/40 hover:bg-brand-50"
+                  className="group rounded-full border-2 border-brand/20 dark:border-brand/30 bg-white dark:bg-transparent px-7 py-4 text-base font-semibold text-brand dark:text-brand-300 hover:border-brand/40 hover:bg-brand-50 dark:hover:bg-brand-900/30"
                 >
                   Asesoría a Particulares
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -90,23 +90,23 @@ export default function Hero() {
 
             {/* Trust indicators */}
             <StaggerItem>
-              <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-gray-border pt-8">
+              <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-gray-border dark:border-[#3A1F32] pt-8">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
-                    <Building2 className="h-5 w-5 text-brand" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A]">
+                    <Building2 className="h-5 w-5 text-brand dark:text-brand-300" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-dark">Startups & Tech</p>
-                    <p className="text-xs text-dark-muted">foco corporativo</p>
+                    <p className="text-sm font-semibold text-dark dark:text-white/90">Startups & Tech</p>
+                    <p className="text-xs text-dark-muted dark:text-white/40">foco corporativo</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
-                    <Clock className="h-5 w-5 text-brand" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A]">
+                    <Clock className="h-5 w-5 text-brand dark:text-brand-300" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-dark">Respuesta 24h</p>
-                    <p className="text-xs text-dark-muted">consultas urgentes</p>
+                    <p className="text-sm font-semibold text-dark dark:text-white/90">Respuesta 24h</p>
+                    <p className="text-xs text-dark-muted dark:text-white/40">consultas urgentes</p>
                   </div>
                 </div>
               </div>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -81,12 +82,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={cn(geistSans.variable, geistMono.variable)}>
+    <html lang="es" className={cn(geistSans.variable, geistMono.variable)} suppressHydrationWarning>
       <body className="font-sans antialiased overflow-x-hidden">
-        <JsonLd />
-        <Navbar />
-        {children}
-        <WhatsAppButton />
+        <ThemeProvider>
+          <JsonLd />
+          <Navbar />
+          {children}
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   );

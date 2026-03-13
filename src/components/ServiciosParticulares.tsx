@@ -30,23 +30,23 @@ const servicios: Servicio[] = [
 
 export default function ServiciosParticulares() {
   return (
-    <section id="particulares" className="relative bg-nude py-16 sm:py-20 lg:py-28">
+    <section id="particulares" className="relative bg-nude dark:bg-[#0F0710] py-16 sm:py-20 lg:py-28">
       {/* Top separator */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 shadow-sm">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white dark:bg-[#1E0F1A] px-3 py-1 shadow-sm">
             <span className="text-xs font-semibold uppercase tracking-wider text-brand">
               Para particulares
             </span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl lg:text-5xl">
             Defendemos tus{" "}
             <span className="text-brand">derechos</span>
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-dark-muted">
+          <p className="mt-4 text-lg leading-relaxed text-dark-muted dark:text-white/60">
             Situaciones difíciles merecen respuestas claras. Te brindamos
             asesoramiento cercano y efectivo cuando más lo necesitás.
           </p>
@@ -61,25 +61,25 @@ export default function ServiciosParticulares() {
                 <motion.div
                   whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(114, 47, 87, 0.10)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group relative h-full overflow-hidden rounded-2xl border border-nude-200 bg-white p-6 sm:p-8 shadow-sm lg:p-10"
+                  className="group relative h-full overflow-hidden rounded-2xl border border-nude-200 dark:border-[#3A1F32] bg-white dark:bg-[#180D16] p-6 sm:p-8 shadow-sm lg:p-10"
                 >
                   {/* Icon */}
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand">
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A] text-brand dark:text-brand-300">
                     <Icon className="h-6 w-6" strokeWidth={1.5} />
                   </div>
 
                   {/* Content */}
-                  <h3 className="mb-3 text-2xl font-bold text-dark">
+                  <h3 className="mb-3 text-2xl font-bold text-dark dark:text-white">
                     {servicio.titulo}
                   </h3>
-                  <p className="mb-6 text-base leading-relaxed text-dark-muted">
+                  <p className="mb-6 text-base leading-relaxed text-dark-muted dark:text-white/60">
                     {servicio.descripcion}
                   </p>
 
                   {/* Feature list */}
                   <ul className="space-y-3">
                     {servicio.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-dark-muted">
+                      <li key={feature} className="flex items-center gap-3 text-sm text-dark-muted dark:text-white/60">
                         <Check className="h-4 w-4 shrink-0 text-brand" strokeWidth={2} />
                         {feature}
                       </li>

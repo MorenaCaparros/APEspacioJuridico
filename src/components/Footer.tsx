@@ -24,7 +24,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-dark text-white">
+    <footer id="contacto" className="bg-dark dark:bg-[#180D16] text-white">
       <FadeIn className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20" y={30} duration={0.6}>
         <div className="grid gap-10 sm:gap-12 lg:grid-cols-12">
           {/* Brand + Contact */}

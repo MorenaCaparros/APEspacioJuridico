@@ -37,7 +37,7 @@ const servicios: Servicio[] = [
 
 export default function ServiciosCorporativos() {
   return (
-    <section id="empresas" className="relative bg-white py-16 sm:py-20 lg:py-28">
+    <section id="empresas" className="relative bg-white dark:bg-[#0F0710] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">
@@ -46,11 +46,11 @@ export default function ServiciosCorporativos() {
               Para empresas
             </span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl lg:text-5xl">
             Legal ops para empresas que{" "}
             <span className="text-brand">escalan</span>
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-dark-muted">
+          <p className="mt-4 text-lg leading-relaxed text-dark-muted dark:text-white/60">
             Entendemos tu negocio, tu stack y tus tiempos. Asesoría legal sin
             burocracia, diseñada para equipos que se mueven rápido.
           </p>
@@ -65,18 +65,18 @@ export default function ServiciosCorporativos() {
                 <motion.div
                   whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(114, 47, 87, 0.12)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="group relative h-full rounded-2xl border border-gray-border bg-white p-8 transition-colors duration-300 hover:border-brand/20"
+                  className="group relative h-full rounded-2xl border border-gray-border dark:border-[#3A1F32] bg-white dark:bg-[#180D16] p-8 transition-colors duration-300 hover:border-brand/20 dark:hover:border-brand/40"
                 >
                   {/* Icon */}
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand transition-colors group-hover:bg-brand group-hover:text-white">
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 dark:bg-[#1E0F1A] text-brand dark:text-brand-300 transition-colors group-hover:bg-brand group-hover:text-white">
                     <Icon className="h-6 w-6" strokeWidth={1.5} />
                   </div>
 
                   {/* Content */}
-                  <h3 className="mb-3 text-xl font-bold text-dark">
+                  <h3 className="mb-3 text-xl font-bold text-dark dark:text-white">
                     {servicio.titulo}
                   </h3>
-                  <p className="mb-6 text-sm leading-relaxed text-dark-muted">
+                  <p className="mb-6 text-sm leading-relaxed text-dark-muted dark:text-white/60">
                     {servicio.descripcion}
                   </p>
 
@@ -85,7 +85,7 @@ export default function ServiciosCorporativos() {
                     {servicio.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-nude px-3 py-1 text-xs font-medium text-dark-muted"
+                        className="rounded-full bg-nude dark:bg-[#1E0F1A] px-3 py-1 text-xs font-medium text-dark-muted dark:text-white/50"
                       >
                         {tag}
                       </span>

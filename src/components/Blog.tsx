@@ -39,7 +39,7 @@ const articulos = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="bg-white py-16 sm:py-20 lg:py-28">
+    <section id="blog" className="bg-white dark:bg-[#0F0710] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="mb-16 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
@@ -49,10 +49,10 @@ export default function Blog() {
                 Blog
               </span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-dark dark:text-white sm:text-4xl">
               Novedades & recursos
             </h2>
-            <p className="mt-3 text-lg text-dark-muted">
+            <p className="mt-3 text-lg text-dark-muted dark:text-white/60">
               Artículos prácticos para empresas y particulares.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function Blog() {
             <StaggerItem key={articulo.slug}>
               <article className="group cursor-pointer">
                 {/* Image placeholder */}
-                <div className="mb-5 aspect-[16/10] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 to-nude transition-transform group-hover:scale-[1.02]">
+                <div className="mb-5 aspect-[16/10] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 to-nude dark:from-[#1E0F1A] dark:to-[#180D16] transition-transform group-hover:scale-[1.02]">
                   <div className="flex h-full w-full items-center justify-center">
                     <Newspaper className="h-10 w-10 text-brand-200" strokeWidth={1} />
                   </div>
@@ -82,17 +82,16 @@ export default function Blog() {
                   <span className="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand">
                     {articulo.categoria}
                   </span>
-                  <span className="text-xs text-dark-muted">{articulo.fecha}</span>
-                  <span className="text-xs text-dark-muted">· {articulo.tiempoLectura}</span>
+                  <span className="text-xs text-dark-muted dark:text-white/40">{articulo.fecha}</span>
+                  <span className="text-xs text-dark-muted dark:text-white/40">· {articulo.tiempoLectura}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="mb-2 text-lg font-bold leading-snug text-dark transition-colors group-hover:text-brand">
+                <h3 className="mb-2 text-lg font-bold leading-snug text-dark dark:text-white transition-colors group-hover:text-brand dark:group-hover:text-brand-300">
                   {articulo.titulo}
                 </h3>
-
                 {/* Description */}
-                <p className="text-sm leading-relaxed text-dark-muted">
+                <p className="text-sm leading-relaxed text-dark-muted dark:text-white/50">
                   {articulo.descripcion}
                 </p>
               </article>

@@ -18,7 +18,7 @@ export default async function BlogPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-brand-50/40 dark:from-[#0F0710] dark:to-[#0F0710]">
       {/* Header */}
-      <section className="mx-auto max-w-screen-2xl px-4 pb-12 pt-32 sm:px-6 lg:px-6 lg:pt-40">
+      <section className="mx-auto max-w-[1560px] px-4 pb-12 pt-32 sm:px-6 lg:px-6 lg:pt-40">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-50 dark:bg-[#1E0F1A] px-3 py-1">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand dark:text-brand-300">
             Blog
@@ -33,7 +33,7 @@ export default async function BlogPage() {
       </section>
 
       {/* Grid */}
-      <section className="mx-auto max-w-screen-2xl px-4 pb-24 sm:px-6 lg:px-6">
+      <section className="mx-auto max-w-[1560px] px-4 pb-24 sm:px-6 lg:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {articulos.map((articulo) => (
             <Link

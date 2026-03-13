@@ -108,20 +108,33 @@ body {
 
 body {
   color: var(--on-surface);
+  font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.0625rem; /* ~17px en desktop */
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--surface);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brand-400);
+  background: #D1D1D6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #AEAEB2;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-brand-700);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
   background: var(--color-brand);
 }
 

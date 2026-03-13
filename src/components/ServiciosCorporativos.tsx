@@ -44,7 +44,7 @@ export default function ServiciosCorporativos() {
         <div className="absolute bottom-0 left-1/4 h-[250px] w-[250px] rounded-full bg-nude-dark/60 blur-3xl" />
         <div className="absolute top-1/3 -left-16 h-[200px] w-[200px] rounded-full bg-brand-100/50 blur-3xl" />
       </div>
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-6 relative">
+      <div className="mx-auto max-w-[1560px] px-4 sm:px-6 lg:px-6 relative">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1">

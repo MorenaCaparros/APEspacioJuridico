@@ -40,7 +40,7 @@ export default function ServiciosParticulares() {
         <div className="absolute -top-16 left-10 h-[180px] w-[180px] rounded-full bg-brand-100/50 blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-[1560px] px-4 sm:px-6 lg:px-6">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white dark:bg-[#1E0F1A] px-3 py-1 shadow-sm">

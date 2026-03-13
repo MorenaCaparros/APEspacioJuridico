@@ -39,7 +39,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-screen-2xl w-full px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:px-6 lg:pt-36 lg:pb-24">
+      <div className="relative mx-auto max-w-[1560px] w-full px-4 pt-28 pb-16 sm:px-6 sm:pt-32 sm:pb-20 lg:px-6 lg:pt-36 lg:pb-24">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* Left — Text */}

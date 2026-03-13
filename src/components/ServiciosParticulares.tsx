@@ -30,7 +30,7 @@ const servicios: Servicio[] = [
 
 export default function ServiciosParticulares() {
   return (
-    <section id="particulares" className="relative bg-nude dark:bg-[#0F0710] py-16 sm:py-20 lg:py-28">
+    <section id="particulares" className="relative bg-gradient-to-br from-nude via-brand-50/50 to-nude-dark dark:from-[#0F0710] dark:via-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
       {/* Top separator */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-200 to-transparent" />
 

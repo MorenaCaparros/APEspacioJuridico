@@ -58,21 +58,12 @@ export const metadata: Metadata = {
     title: "Arana Postigo | Estudio Jurídico — Buenos Aires",
     description:
       "Registro de marcas, contratos IT, derecho laboral y sucesiones en Buenos Aires. Asesoría legal moderna para empresas y particulares.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Arana Postigo Estudio Jurídico — Buenos Aires",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Arana Postigo | Estudio Jurídico — Buenos Aires",
     description:
       "Registro de marcas, contratos IT, derecho laboral y sucesiones. Asesoría legal ágil en Buenos Aires.",
-    images: ["/og-image.png"],
   },
 };
 

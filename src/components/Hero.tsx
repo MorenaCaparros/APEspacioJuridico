@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-[#0F0710]">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-white to-brand-50/60 dark:from-[#0F0710] dark:via-[#0F0710] dark:to-[#0F0710]">
       {/* Background decorative elements */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div

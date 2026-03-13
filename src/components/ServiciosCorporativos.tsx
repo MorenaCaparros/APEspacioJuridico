@@ -37,7 +37,7 @@ const servicios: Servicio[] = [
 
 export default function ServiciosCorporativos() {
   return (
-    <section id="empresas" className="relative bg-white dark:bg-[#0F0710] py-16 sm:py-20 lg:py-28">
+    <section id="empresas" className="relative bg-gradient-to-b from-brand-50/40 to-white dark:from-[#0F0710] dark:to-[#0F0710] py-16 sm:py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <FadeIn className="mb-16 max-w-2xl">

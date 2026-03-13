@@ -2,23 +2,30 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+
+const navLinks = [
+  { href: "#empresas", label: "Empresas" },
+  { href: "#particulares", label: "Particulares" },
+  { href: "#blog", label: "Blog" },
+  { href: "#contacto", label: "Contacto" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const navLinks = [
-    { href: "#empresas", label: "Empresas" },
-    { href: "#particulares", label: "Particulares" },
-    { href: "#blog", label: "Blog" },
-    { href: "#contacto", label: "Contacto" },
-  ];
 
   return (
     <nav
@@ -31,8 +38,8 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">
+          <Link href="/" className="flex items-center gap-2.5">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand text-white font-bold text-sm tracking-tight">
               AP
             </div>
             <div className="flex flex-col">
@@ -51,66 +58,53 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-dark-muted transition-colors hover:text-primary"
+                className="text-sm font-medium text-dark-muted transition-colors hover:text-brand"
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contacto"
-              className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-primary-light hover:shadow-lg hover:shadow-primary/20"
+            <Button
+              render={<a href="#contacto" />}
+              className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-light hover:shadow-lg hover:shadow-brand/20"
             >
               Agendar consulta
-            </a>
+            </Button>
           </div>
 
-          {/* Mobile menu toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-nude md:hidden"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="h-5 w-5 text-dark"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile menu — shadcn Sheet */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger
+                render={
+                  <Button variant="ghost" size="icon" aria-label="Abrir menú" />
+                }
+              >
+                <Menu className="h-5 w-5" />
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] p-0">
+                <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
+                <div className="flex flex-col gap-1 px-4 pt-16 pb-6">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="rounded-lg px-4 py-3 text-base font-medium text-dark-muted transition-colors hover:bg-nude hover:text-brand"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                  <a
+                    href="#contacto"
+                    className="mt-4 rounded-full bg-brand px-5 py-3 text-center text-sm font-medium text-white transition-all hover:bg-brand-light"
+                  >
+                    Agendar consulta
+                  </a>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
-
-      {/* Mobile Nav */}
-      {mobileOpen && (
-        <div className="border-t border-gray-border bg-white/95 backdrop-blur-md md:hidden">
-          <div className="flex flex-col gap-1 px-4 py-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="rounded-lg px-4 py-3 text-sm font-medium text-dark-muted transition-colors hover:bg-nude hover:text-primary"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="#contacto"
-              onClick={() => setMobileOpen(false)}
-              className="mt-2 rounded-full bg-primary px-5 py-3 text-center text-sm font-medium text-white transition-all hover:bg-primary-light"
-            >
-              Agendar consulta
-            </a>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

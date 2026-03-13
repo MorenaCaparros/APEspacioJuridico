@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const inter = Inter({
-  variable: "--font-inter",
+const geistSans = Geist({
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -17,6 +14,7 @@ const inter = Inter({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -47,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={cn("font-sans", geist.variable)}>
-      <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
+    <html lang="es" className={cn(geistSans.variable, geistMono.variable)}>
+      <body className="font-sans antialiased">
         <Navbar />
         {children}
         <WhatsAppButton />
